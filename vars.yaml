@@ -1,0 +1,46 @@
+---
+disk: vda
+helper:
+  name: "helper"
+  ipaddr: "192.168.7.77"
+dns:
+  domain: "monkey.lab"
+  clusterid: "ocp4"
+  forwarder1: "8.8.8.8"
+  forwarder2: "8.8.4.4"
+dhcp:
+  router: "192.168.7.1"
+  bcast: "192.168.7.255"
+  netmask: "255.255.255.0"
+  poolstart: "192.168.7.10"
+  poolend: "192.168.7.30"
+  ipid: "192.168.7.0"
+  netmaskid: "255.255.255.0"
+bootstrap:
+  name: "bootstrap"
+  ipaddr: "192.168.7.20"
+  macaddr: "52:54:00:23:90:32"
+masters:
+  - name: "master0"
+    ipaddr: "192.168.7.21"
+    macaddr: "52:54:00:54:2a:fa"
+  - name: "master1"
+    ipaddr: "192.168.7.22"
+    macaddr: "52:54:00:62:0a:4e"
+  - name: "master2"
+    ipaddr: "192.168.7.23"
+    macaddr: "52:54:00:b7:26:3e"
+workers:
+  - name: "worker0"
+    ipaddr: "192.168.7.11"
+    macaddr: "52:54:00:04:c4:2f"
+  - name: "worker1"
+    ipaddr: "192.168.7.12"
+    macaddr: "52:54:00:25:06:63"
+  - name: "worker2"
+    ipaddr: "192.168.7.13"
+    macaddr: "52:54:00:e2:57:a0"
+#other:
+#  - name: "non-cluster-vm"
+#    ipaddr: "192.168.7.31"
+#    macaddr: "52:54:00:f4:2e:2e"

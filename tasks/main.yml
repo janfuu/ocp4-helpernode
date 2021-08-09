@@ -60,6 +60,7 @@
     when: not staticips and uefi
 
   - name: Setup named configuration files
+    when: dhcp.dns is not defined or dhcp.dns == helper.ipaddr
     block:
     - name: Write out named file
       template:
@@ -105,7 +106,7 @@
       notify:
         - restart haproxy
       when: dns.lb_ipaddr is not defined or dns.lb_ipaddr == helper.ipaddr  
-    when: dhcp.dns is not defined or dhcp.dns == helper.ipaddr 
+     ## Block End Setup named configuration files
 
   - name: Copy httpd conf file
     copy:
